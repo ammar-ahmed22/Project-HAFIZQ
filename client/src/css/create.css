@@ -1,0 +1,16 @@
+.create-form{
+    border: 1px solid var(--border);
+}
+
+.form-group{
+    display: flex;
+}
+
+.form-label{
+    width: 20%;
+    font-weight: bold;
+}
+
+.form-control{
+    border-color: var(--border);
+}

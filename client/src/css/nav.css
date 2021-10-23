@@ -1,0 +1,7 @@
+.navigation{
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid var(--border);
+    background-color: white;
+    z-index: 2;
+}
