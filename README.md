@@ -3,19 +3,19 @@ Kijiji/Craigslist style website created as part of exercise for Dreamschools int
 
 ## Tech Stack
 #### Front-End
--React
--Bootstrap (styling)
--Boxicons (icons)
+- React
+- Bootstrap (styling)
+- Boxicons (icons)
 
 #### Back-End
--Node.js
--Express.js (server)
--Mongoose (database structuring)
+- Node.js
+- Express.js (server)
+- Mongoose (database structuring)
 
 #### Database
--MongoDB
+- MongoDB
 
 #### Hosting
--Google Firebase (front-end)
--Heroku (back-end/server)
--MongoDB Atlas (cloud database)
+- Google Firebase (front-end)
+- Heroku (back-end/server)
+- MongoDB Atlas (cloud database)
