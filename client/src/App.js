@@ -20,7 +20,7 @@ const App = () => {
           <Route  exact path="/create" render={ props => <CreateListing {...props} />}/>
           <Route exact path="/listing/:identifier" render={ props => <Listing {...props}/>}/>
           <Route exact path="/edit/:identifier" render={ props => <UpdateListing {...props} />}/>
-          <Route exact path="/edit-image/:identifer" render={ props => <UpdateImage {...props} />}/>
+          <Route exact path="/edit-image/:identifier" render={ props => <UpdateImage {...props} />}/>
         </Switch>
       </div>
     </Router>

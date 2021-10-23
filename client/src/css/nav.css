@@ -5,3 +5,11 @@
     background-color: white;
     z-index: 2;
 }
+
+.nav-section{
+    width: 33%;
+}
+
+.bx-search-alt-2{
+    line-height: 1.5;
+}

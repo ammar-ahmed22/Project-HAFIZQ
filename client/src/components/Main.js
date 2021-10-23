@@ -31,7 +31,7 @@ const Main = ({ history }) => {
 
     return (
         <>
-        <Nav />
+        <Nav listings={listings} setListings={setListings} search/>
         <section className="container main mt-5">
             
             {
@@ -39,8 +39,11 @@ const Main = ({ history }) => {
                     return (
                         <div className="listing my-2" key={index} onClick={e => onClickHandler(e, item._id)}>
                             <div className="row">
-                                <div className="col-md-4 col-12">
+                                <div className="col-md-4 col-12 listing-image-box">
                                     <img src={item.image} alt="" className="img-fluid listing-image" />
+                                    <div className="listing-image-hover">
+                                        <h4>VIEW</h4>
+                                    </div>
                                 </div>
 
                                 <div className="col-md-8 col-12 p-3 d-flex flex-column justify-content-center">

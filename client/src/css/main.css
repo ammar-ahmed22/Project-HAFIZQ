@@ -12,3 +12,30 @@
     object-fit: cover;
     height: 100%;
 }
+
+.listing-image-box{
+    position: relative;
+    z-index: 1;
+
+}
+
+.listing-image-box:hover .listing-image-hover{
+    visibility: visible;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.listing-image-hover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    visibility: none;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}

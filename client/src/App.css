@@ -2,10 +2,18 @@
   --border: #d5d8ef;
 }
 
+body{
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 .App {
   /* text-align: center; */
 }
 
 .img-cont{
   width: 100%;
+}
+
+.text-fancy{
+  font-family: "Pacifico", cursive;
 }

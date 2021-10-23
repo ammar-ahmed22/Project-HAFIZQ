@@ -92,6 +92,25 @@ exports.createListing = async (req, res, next) =>{
     }
 }
 
+exports.findListings = async (req, res, next) => {
+    const { query } = req.query;
+    
+
+    const queryRegex = new RegExp(query.split("&").join(" "), "i");
+    
+    try {
+        const listings = await Listing.find({name: queryRegex})
+
+        if (listings.length === 0){
+            sendData([], "Could not find any matches", res, true);
+        }
+
+        sendData(listings, "Successfully found listings", res, true);
+    } catch (error) {
+        next(error)
+    }
+}
+
 
 const sendData = (payload, message, res, array=false) =>{
     if (array){

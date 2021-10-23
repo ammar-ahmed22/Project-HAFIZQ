@@ -47,3 +47,27 @@ export const updateListing = async (identifier, listing) =>{
         console.log(error)
     }
 }
+
+export const updateImage = async (identifier, image) =>{
+    try {
+        const url = `http://localhost:8000/api/data/update/${identifier}?isImage=true`;
+
+        const { data } = await axios.post(url, image);
+
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const findListings = async (query) =>{
+    try {
+        const url = `http://localhost:8000/api/data/search?query=${query}`;
+
+        const { data } = await axios.get(url);
+
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}

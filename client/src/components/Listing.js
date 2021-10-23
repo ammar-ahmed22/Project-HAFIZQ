@@ -37,14 +37,18 @@ const Listing = ({ match }) => {
         <Nav />
         <div className="container-fluid mainimg p-0">
             <img src={listing.image} alt="" className="img-fluid w-100" />
-            <div className="edit-hover">
-                <Link className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Change Image</Link>
+            <div className="edit-hover p-3">
+                <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Change Image</Link>
             </div>
         </div>
         <section className="container listing-page my-3">
             <div className="d-flex justify-content-between align-items-center">
                 <h1>{listing.name}</h1>
-                <Link to={`/edit/${identifier}`} className='text-decoration-none border border-primary bg-primary text-light rounded rounded-pill p-3 py-2'><i className='bx bxs-edit align-middle'></i> Edit</Link>
+                <div className="d-flex">
+                    <Link to={`/edit/${identifier}`} className='text-decoration-none border border-primary bg-primary text-light rounded rounded-pill p-3 py-2'><i className='bx bxs-edit align-middle'></i> Edit</Link>
+                    {/* <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Edit Image</Link> */}
+                </div>
+                
             </div>
             
             <h3>About</h3>
