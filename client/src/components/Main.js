@@ -13,10 +13,8 @@ const Main = ({ history }) => {
         const fetchData = async () =>{
             const result = await api.getListings();
 
-            console.log(result)
             setListings(result.payload);
 
-            
         }
 
         fetchData();

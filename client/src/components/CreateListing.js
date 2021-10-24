@@ -15,9 +15,6 @@ const CreateListing = ({ history }) => {
         fileInput.classList.add("form-control");
         fileInput.id = "image";
 
-
-        
-
     }, [])
 
     const onSubmitHandler = async (e) =>{
