@@ -25,16 +25,19 @@ const Listing = ({ match }) => {
             setListing(result.payload)
         }
 
+    
+        fetchData();
+
         
-
-        fetchData()
-
-        console.log("inside useEffect")
     }, [identifier])
 
-    console.log(listing)
+    
+    
 
     if (listing){
+        const updatedAt = new Date(listing.updatedAt)
+        const date = updatedAt.toLocaleString('en-US', {weekday: "long", year: "numeric", month: "short", day: "numeric"});
+        const time = updatedAt.toLocaleTimeString('en-US', {hour: "2-digit", minute: "2-digit"})
         return (
             <>
             <Nav />
@@ -45,15 +48,9 @@ const Listing = ({ match }) => {
                 </div>
             </div>
             <section className="container listing-page my-3">
-                <div className="d-flex justify-content-between align-items-center">
-                    <h1>{listing.name}</h1>
-                    {/* <div className="d-flex">
-                        <Link to={`/edit/${identifier}`} className='text-decoration-none border border-primary bg-primary text-light rounded rounded-pill p-3 py-2'><i className='bx bxs-edit align-middle'></i> Edit</Link>
-                        
-                    </div> */}
-                    
-                </div>
                 
+                <h1 className="m-0">{listing.name}</h1>
+                <p className="text-secondary">Last Updated: {date} at {time}</p>
                 <h3>About</h3>
                 <p>{listing.about}</p>
                 <h3>Location</h3>

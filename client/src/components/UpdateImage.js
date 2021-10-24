@@ -19,7 +19,6 @@ const UpdateImage = ({ match, history }) => {
         const fetchData = async () =>{
             const result = await api.getListing(identifier);
 
-            console.log(result)
             setListing(result.payload);
         }
 

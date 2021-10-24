@@ -5,7 +5,7 @@ const urlPrefix = "https://projecthafizq.herokuapp.com/api/data"
 export const createListing = async (listing) =>{
     try {
         const { data } = await axios.post(urlPrefix + '/add-listing', listing);
-        //console.log(data)
+        
         return data
     } catch (error) {
         console.log(error)
@@ -15,7 +15,7 @@ export const createListing = async (listing) =>{
 export const getListings = async () =>{
     try {
         const { data } = await axios.get(urlPrefix + '/listings');
-        //console.log(data)
+        
         return data
     } catch (error) {
         console.log(error)
@@ -25,14 +25,14 @@ export const getListings = async () =>{
 export const getListing = async (identifier) =>{
     
     try {
-        console.log(identifier)
+        
         const url = `/listing/${identifier}`
         const { data } = await axios.get(urlPrefix + url)
-        console.log(data)
+        
         return data
     } catch (error) {
         console.log(error)
-        //return error;
+        
     }
 }
 

@@ -6,7 +6,7 @@ import UpdateListing from './components/UpdateListing';
 import UpdateImage from './components/UpdateImage';
 import Listing from './components/Listing';
 
-import * as api from "./functions/api";
+
 
 const App = () => {
 
@@ -16,11 +16,11 @@ const App = () => {
     <Router>
       <div className="App">
         <Switch>
-          <Route exact path="/" render={ props => <Main {...props} />}/>
-          <Route  exact path="/create" render={ props => <CreateListing {...props} />}/>
-          <Route exact path="/listing/:identifier" render={ props => <Listing {...props}/>}/>
-          <Route exact path="/edit/:identifier" render={ props => <UpdateListing {...props} />}/>
-          <Route exact path="/edit-image/:identifier" render={ props => <UpdateImage {...props} />}/>
+          <Route exact path="/" component={Main}/>
+          <Route  exact path="/create" component={CreateListing}/>
+          <Route exact path="/listing/:identifier" component={Listing}/>
+          <Route exact path="/edit/:identifier" component={UpdateListing}/>
+          <Route exact path="/edit-image/:identifier" component={UpdateImage}/>
         </Switch>
       </div>
     </Router>
