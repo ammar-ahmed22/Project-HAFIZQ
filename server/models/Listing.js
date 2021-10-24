@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-
+// Database model for a listing
 const ListingSchema = new mongoose.Schema({
     name: String,
     about: String,

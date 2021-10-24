@@ -13,12 +13,13 @@ const app = express();
 app.use(express.json({limit: "30mb", extended: true}));
 app.use(express.urlencoded({limit: "30mb",extended:true}));
 
-// Image handling for mongoDB
+// Cross origin middleware
 app.use(cors())
 
 // Connecting to database
 connectDB();
 
+// All endpoints prefixed with /api/data
 app.use("/api/data", require("./routes/data"));
 
 const PORT = process.env.PORT || 5000;

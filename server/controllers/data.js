@@ -46,6 +46,7 @@ exports.updateListing = async (req, res, next) =>{
     try {
         const listing = await Listing.findById(id);
 
+        // Image has separate UI for updating, thus, query sent when updating image
         if (!isImage){
             listing.name = name;
             listing.about = about;
@@ -95,10 +96,12 @@ exports.createListing = async (req, res, next) =>{
 exports.findListings = async (req, res, next) => {
     const { query } = req.query;
     
-
+    // Creating RegEx from query that uses & as spaces
+    // RegEx is of the format /an example query/i
     const queryRegex = new RegExp(query.split("&").join(" "), "i");
     
     try {
+        // MongoDB built-in finding by RegEx
         const listings = await Listing.find({name: queryRegex})
 
         if (listings.length === 0){
@@ -111,7 +114,7 @@ exports.findListings = async (req, res, next) => {
     }
 }
 
-
+// helper function for sucessfull data sending
 const sendData = (payload, message, res, array=false) =>{
     if (array){
         res.status(200).json({
