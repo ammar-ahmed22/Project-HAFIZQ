@@ -15,9 +15,12 @@ const Nav = ({active, listings, setListings, search}) => {
             setListings(result.payload)
         }
 
-        fetchData();
+        if (search){
+            fetchData();
+        }
+        
 
-    }, [query, setListings])
+    }, [query, setListings, search])
 
 
 
