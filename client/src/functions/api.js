@@ -1,10 +1,10 @@
 import axios from "axios";
 
-
+const urlPrefix = "https://projecthafizq.herokuapp.com/api/data"
 
 export const createListing = async (listing) =>{
     try {
-        const { data } = await axios.post('http://localhost:8000/api/data/add-listing', listing);
+        const { data } = await axios.post(urlPrefix + '/add-listing', listing);
         //console.log(data)
         return data
     } catch (error) {
@@ -14,7 +14,7 @@ export const createListing = async (listing) =>{
 
 export const getListings = async () =>{
     try {
-        const { data } = await axios.get('http://localhost:8000/api/data/listings');
+        const { data } = await axios.get(urlPrefix + '/listings');
         //console.log(data)
         return data
     } catch (error) {
@@ -23,11 +23,11 @@ export const getListings = async () =>{
 }
 
 export const getListing = async (identifier) =>{
-    console.log("Get Listing")
+    
     try {
         console.log(identifier)
-        const url = `http://localhost:8000/api/data/listing/${identifier}`
-        const { data } = await axios.get(url)
+        const url = `/listing/${identifier}`
+        const { data } = await axios.get(urlPrefix + url)
         console.log(data)
         return data
     } catch (error) {
@@ -38,9 +38,9 @@ export const getListing = async (identifier) =>{
 
 export const updateListing = async (identifier, listing) =>{
     try {
-        const url = `http://localhost:8000/api/data/update/${identifier}`
+        const url = `/update/${identifier}`
 
-        const { data } = await axios.post(url, listing)
+        const { data } = await axios.post(urlPrefix + url, listing)
 
         return data
     } catch (error) {
@@ -50,9 +50,9 @@ export const updateListing = async (identifier, listing) =>{
 
 export const updateImage = async (identifier, image) =>{
     try {
-        const url = `http://localhost:8000/api/data/update/${identifier}?isImage=true`;
+        const url = `/update/${identifier}?isImage=true`;
 
-        const { data } = await axios.post(url, image);
+        const { data } = await axios.post(urlPrefix + url, image);
 
         return data
     } catch (error) {
@@ -62,9 +62,9 @@ export const updateImage = async (identifier, image) =>{
 
 export const findListings = async (query) =>{
     try {
-        const url = `http://localhost:8000/api/data/search?query=${query}`;
+        const url = `/search?query=${query}`;
 
-        const { data } = await axios.get(url);
+        const { data } = await axios.get(urlPrefix + url);
 
         return data
     } catch (error) {
