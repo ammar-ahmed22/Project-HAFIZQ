@@ -27,7 +27,7 @@ const CreateListing = ({ history }) => {
 
         if (!result.success){
             console.log("Error:", result)
-            // TODO: display error message
+            
         }else{
             history.push("/");
         }
@@ -70,7 +70,10 @@ const CreateListing = ({ history }) => {
             />
           </div>
           
-          <button className="btn btn-primary" type="submit">Submit</button>
+          <div className="d-flex justify-content-end">
+            <button className="btn btn-primary rounded rounded-pill" type="submit">Submit</button>
+          </div>
+          
         </form>
         
       </section>

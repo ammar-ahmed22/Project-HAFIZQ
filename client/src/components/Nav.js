@@ -30,9 +30,9 @@ const Nav = ({active, listings, setListings, search}) => {
                 <Link to="/" className="fw-bold text-primary text-decoration-none fs-3 text-fancy">Project HafizQ</Link>
             </div>
 
-            {search && (<div class="input-group nav-section align-items-center">
-                            <span class="input-group-text" id="search-bar"><i class='bx bx-search-alt-2' ></i></span>
-                            <input type="text" class="form-control" placeholder="Search by name" aria-label="Search" aria-describedby="search-bar" value={query} onChange={e => setQuery(e.target.value)}></input>
+            {search && (<div className="input-group nav-section align-items-center">
+                            <span className="input-group-text" id="search-bar"><i className='bx bx-search-alt-2' ></i></span>
+                            <input type="text" className="form-control" placeholder="Search by name" aria-label="Search" aria-describedby="search-bar" value={query} onChange={e => setQuery(e.target.value)}></input>
                         </div>)}      
             <div className="nav-section d-flex justify-content-end">
                 <Link to="/about" className="text-secondary text-end text-decoration-none mx-2 fs-5 fw-bold" >About</Link>

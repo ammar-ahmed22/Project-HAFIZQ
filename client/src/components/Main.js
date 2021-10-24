@@ -68,7 +68,7 @@ const Main = ({ history }) => {
     }else{
         return (
             <>
-            <Nav />
+            <Nav listings={listings} setListings={setListings} search/>
             <div className="container loading-cont d-flex justify-content-center align-items-center">
                 <Loading />
             </div>
