@@ -1,8 +1,8 @@
 import "../css/main.css"
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 import Nav from "./Nav";
+import Loading from "./Loading";
 import * as api from "../functions/api";
 
 const Main = ({ history }) => {
@@ -29,39 +29,52 @@ const Main = ({ history }) => {
         history.push(`/listing/${id}`);
     }
 
-    return (
-        <>
-        <Nav listings={listings} setListings={setListings} search/>
-        <section className="container main mt-5">
-            
-            {
-                listings.map((item, index) =>{
-                    return (
-                        <div className="listing my-2" key={index} onClick={e => onClickHandler(e, item._id)}>
-                            <div className="row">
-                                <div className="col-md-4 col-12 listing-image-box">
-                                    <img src={item.image} alt="" className="img-fluid listing-image" />
-                                    <div className="listing-image-hover">
-                                        <h4>VIEW</h4>
+    if (listings){
+        return (
+            <>
+            <Nav listings={listings} setListings={setListings} search/>
+            <section className="container main mt-5">
+                
+                {
+                    listings.map((item, index) =>{
+                        return (
+                            <div className="listing my-2" key={index} onClick={e => onClickHandler(e, item._id)}>
+                                <div className="row">
+                                    <div className="col-md-4 col-12 listing-image-box">
+                                        <img src={item.image} alt="" className="img-fluid listing-image" />
+                                        <div className="listing-image-hover">
+                                            <h4>VIEW</h4>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div className="col-md-8 col-12 p-3 d-flex flex-column justify-content-center">
-                                    <h3>{item.name}</h3>
-                                    <p>{item.about}</p>
+    
+                                    <div className="col-md-8 col-12 p-3 d-flex flex-column justify-content-center">
+                                        <h3>{item.name}</h3>
+                                        <p>{item.about}</p>
+                                        
+                                    </div>
                                     
                                 </div>
                                 
                             </div>
-                            
-                        </div>
-                    )
-                    
-                })
-            }
-        </section>
-        </>
-    );
+                        )
+                        
+                    })
+                }
+            </section>
+            </>
+        );
+    }else{
+        return (
+            <>
+            <Nav />
+            <div className="container loading-cont d-flex justify-content-center align-items-center">
+                <Loading />
+            </div>
+            
+            </>
+        )
+    }
+    
 }
 
 export default Main;

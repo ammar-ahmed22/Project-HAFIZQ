@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import * as api from "../functions/api";
 
 import Nav from "./Nav";
+import Loading from "./Loading";
 
 const Listing = ({ match }) => {
 
@@ -32,34 +33,48 @@ const Listing = ({ match }) => {
 
     console.log(listing)
 
-    return (
-        <>
-        <Nav />
-        <div className="container-fluid mainimg p-0">
-            <img src={listing.image} alt="" className="img-fluid w-100" />
-            <div className="edit-hover p-3">
-                <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Change Image</Link>
+    if (listing){
+        return (
+            <>
+            <Nav />
+            <div className="container-fluid mainimg p-0">
+                <img src={listing.image} alt="" className="img-fluid w-100" />
+                <div className="edit-hover p-3">
+                    <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Change Image</Link>
+                </div>
             </div>
-        </div>
-        <section className="container listing-page my-3">
-            <div className="d-flex justify-content-between align-items-center">
-                <h1>{listing.name}</h1>
-                <div className="d-flex">
-                    <Link to={`/edit/${identifier}`} className='text-decoration-none border border-primary bg-primary text-light rounded rounded-pill p-3 py-2'><i className='bx bxs-edit align-middle'></i> Edit</Link>
-                    {/* <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Edit Image</Link> */}
+            <section className="container listing-page my-3">
+                <div className="d-flex justify-content-between align-items-center">
+                    <h1>{listing.name}</h1>
+                    <div className="d-flex">
+                        <Link to={`/edit/${identifier}`} className='text-decoration-none border border-primary bg-primary text-light rounded rounded-pill p-3 py-2'><i className='bx bxs-edit align-middle'></i> Edit</Link>
+                        {/* <Link to={`/edit-image/${identifier}`} className="text-decoration-none border border-primary bg-primary text-light rounded rounded-pill px-3 py-2"><i className='bx bxs-edit align-middle'></i> Edit Image</Link> */}
+                    </div>
+                    
                 </div>
                 
+                <h3>About</h3>
+                <p>{listing.about}</p>
+                <h3>Location</h3>
+                <p>{listing.location}</p>
+                <h3>Admission</h3>
+                <p>{listing.admission}</p>
+            </section>
+            </>
+        )
+    }else{
+        return (
+            <>
+            <Nav />
+            <div className="container container loading-cont d-flex justify-content-center align-items-center">
+                <Loading />
             </div>
             
-            <h3>About</h3>
-            <p>{listing.about}</p>
-            <h3>Location</h3>
-            <p>{listing.location}</p>
-            <h3>Admission</h3>
-            <p>{listing.admission}</p>
-        </section>
-        </>
-    );
+            </>
+        )
+        
+    }
+    
 }
 
 export default Listing;

@@ -1,6 +1,5 @@
 import "../css/create.css"
 import React, {useEffect, useState} from 'react';
-import FileBase64 from 'react-file-base64';
 import * as api from '../functions/api';
 
 import Nav from './Nav';
