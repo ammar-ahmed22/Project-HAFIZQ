@@ -16,7 +16,6 @@
 .listing-image-box{
     position: relative;
     z-index: 1;
-
 }
 
 .listing-image-box:hover .listing-image-hover{

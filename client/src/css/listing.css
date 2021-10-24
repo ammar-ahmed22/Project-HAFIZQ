@@ -1,8 +1,14 @@
 .mainimg{
     position: relative;
     z-index: 1;
+    /* max-height: 50vh; */
 }
 
+.mainimg img{
+    max-height: 50vh;
+    object-fit: cover;
+    object-position: center;
+}
 
 
 @keyframes slideUp{

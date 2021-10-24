@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import Nav from "./Nav";
 import Loading from "./Loading";
+import Footer from "./Footer";
 import * as api from "../functions/api";
 
 const Main = ({ history }) => {
@@ -38,7 +39,7 @@ const Main = ({ history }) => {
                 {
                     listings.map((item, index) =>{
                         return (
-                            <div className="listing my-2" key={index} onClick={e => onClickHandler(e, item._id)}>
+                            <div className="listing my-4" key={index} onClick={e => onClickHandler(e, item._id)}>
                                 <div className="row">
                                     <div className="col-md-4 col-12 listing-image-box">
                                         <img src={item.image} alt="" className="img-fluid listing-image" />
@@ -61,6 +62,7 @@ const Main = ({ history }) => {
                     })
                 }
             </section>
+            <Footer />
             </>
         );
     }else{
@@ -70,7 +72,7 @@ const Main = ({ history }) => {
             <div className="container loading-cont d-flex justify-content-center align-items-center">
                 <Loading />
             </div>
-            
+            <Footer />
             </>
         )
     }

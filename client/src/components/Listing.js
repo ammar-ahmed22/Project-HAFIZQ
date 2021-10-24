@@ -5,6 +5,7 @@ import * as api from "../functions/api";
 
 import Nav from "./Nav";
 import Loading from "./Loading";
+import Footer from "./Footer";
 
 const Listing = ({ match }) => {
 
@@ -60,6 +61,7 @@ const Listing = ({ match }) => {
                 <h3>Admission</h3>
                 <p>{listing.admission}</p>
             </section>
+            <Footer />
             </>
         )
     }else{
@@ -69,7 +71,7 @@ const Listing = ({ match }) => {
             <div className="container container loading-cont d-flex justify-content-center align-items-center">
                 <Loading />
             </div>
-            
+            <Footer />
             </>
         )
         

@@ -64,9 +64,9 @@ const UpdateListing = ({ match, history }) => {
             <textarea  className="form-control" id="admission" rows="3" value={listing.admission} onChange={e => setListing({...listing, admission: e.target.value})}></textarea>
           </div>
          
-          <div className="d-flex">
-            <button className="btn btn-danger me-2" onClick={onCancelHandler}>Cancel</button>
-            <button className="btn btn-primary ms-2" type="submit">Save</button>
+          <div className="d-flex justify-content-end">
+            <button className="btn btn-danger me-2 rounded rounded-pill" onClick={onCancelHandler}>Cancel</button>
+            <button className="btn btn-primary ms-2 rounded rounded-pill" type="submit">Save</button>
           </div>
           
         </form>
